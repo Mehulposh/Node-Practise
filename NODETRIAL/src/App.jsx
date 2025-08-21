@@ -5,13 +5,7 @@ function App() {
   const [text, setText] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:8080/contacts',{
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'MEHULPOSH123@'
-      }
-    })
+    fetch('http://localhost:8080/')
       .then((res) => res.json())
       .then((data) => {
         // Convert object to string or pick property to display

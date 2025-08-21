@@ -1,6 +1,7 @@
 function HomeResponse(req,res) {
-    res.send('welcome to the app');
-
+   res.json({
+    message: 'welcome to the home page'
+   })
 }
 
 function ContactResponse(req,res){
