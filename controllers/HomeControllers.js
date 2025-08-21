@@ -4,7 +4,9 @@ function HomeResponse(req,res) {
 }
 
 function ContactResponse(req,res){
-    res.send('welcome to the contacts section');
+res.json({
+    message: 'welcome to the contacts section'
+});
 }
 
 module.exports = {HomeResponse,ContactResponse};
