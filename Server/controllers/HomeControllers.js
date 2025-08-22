@@ -15,15 +15,18 @@ res.json({
 
 async function CreateUser(req,res){
    const body = req.body;
-    const {name, age} = body;
+    const {name, age,email,password} = body;
 
     const UserObject = UserModel({
         name,
-        age
+        age,
+        email,
+        password
     });
 
     try { 
         const response = await UserObject.save();
+        
         res.status(201).json(response)
     } catch (error) {
         res.status(500).json({message : error.message});
