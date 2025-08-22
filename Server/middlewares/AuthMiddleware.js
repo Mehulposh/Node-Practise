@@ -3,7 +3,7 @@ const password = process.env.PASSWORD;
 function AuthMiddleware(req,res,next){
     const headers = req.headers;
     const token = headers.authorization;
-    console.log(headers);
+    
 
     if(token === password){
         next();

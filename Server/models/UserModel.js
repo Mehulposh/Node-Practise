@@ -11,7 +11,8 @@ const userSchema = new Schema({
     },
     age: {
       type: Number,
-      min: [18, "Age must be a positive number"],
+      required: [true, "Age is required"],
+      min: [18, "Age must be a more than or equal to 18"],
       max: [150, "Age must be less than or equal to 150"],
     },
     email: {
@@ -33,4 +34,4 @@ const userSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model("user", userSchema);
+module.exports = mongoose.model("users", userSchema);
