@@ -22,8 +22,22 @@ class UserService{
 
     }
 
+    static async getAllUsers(){
+        try {
+            const response = await UserModel.find({});
+            return response
+        } catch (error) {
+            return error
+        }
+    }
     static async getUserById(userId) {
         // Logic to get a user by ID
+        try {
+            const response = await UserModel.findOne(userId);
+            return response;
+        } catch (error) {
+            return error
+        }
     }
 
     static async updateUser(userId, updatedData) {

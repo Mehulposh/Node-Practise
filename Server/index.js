@@ -3,6 +3,7 @@ require('dotenv').config();
 const cors = require('cors')
 const HomeRoute = require('./routes/HomeRoutes')
 const BlogRotes = require('./routes/BlogsRoute')
+const UserRoutes = require('./routes/UserRoute');
 const {default: mongoose} = require('mongoose');
 
 //PORT from .env file
@@ -22,6 +23,8 @@ server.use('/api/v1/',HomeRoute)
 //Blog route
 server.use('/api/v1/blogs', BlogRotes);
 
+//User Route
+server.use('/api/v1/user',UserRoutes);
 
 //database details from .env file
 const dbName = process.env.DB_NAME;
