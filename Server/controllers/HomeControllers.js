@@ -1,4 +1,6 @@
+
 const { response } = require("express");
+const UserService = require("../services/UserService");
 const UserModel = require("../models/UserModel");
 
 function HomeResponse(req,res) {
@@ -17,15 +19,10 @@ async function CreateUser(req,res){
    const body = req.body;
     const {name, age,email,password} = body;
 
-    const UserObject = UserModel({
-        name,
-        age,
-        email,
-        password
-    });
+    
 
     try { 
-        const response = await UserObject.save();
+        const response = await UserService.createUser(name,age,email,password);
         
         res.status(201).json(response)
     } catch (error) {
