@@ -33,7 +33,7 @@ class UserService{
     static async getUserById(userId) {
         // Logic to get a user by ID
         try {
-            const response = await UserModel.findOne(userId);
+            const response = await UserModel.findById(userId);
             return response;
         } catch (error) {
             return error
